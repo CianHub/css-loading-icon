@@ -14,11 +14,14 @@ h2 {
 
 h1 {
     font-size: 80px;
+    padding-bottom: 1em;
 }
 
 h2 {
+    padding-top: 1em;
     font-size: 36px;
     opacity: 0;
+    margin: 0 auto;
     animation: appear 1s 3s forwards;
 }
 
@@ -30,27 +33,40 @@ h2 {
 .loading {
     border-radius: 50%;
     border: 16px solid #bdc3c7;
-    border-top-color: #3498db;
-    border-bottom-color: #3498db;
+    border-top-color: #5bc0de;
+    border-bottom-color: #5bc0de;
     background: transparent;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto;
     animation: spinny 2s alternate-reverse infinite forwards;
 }
 
 @keyframes spinny {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1);
 
     }
 
     50% {
-        transform: rotate(180deg)
+        transform: rotate(180deg) scale(1.05)
+    }
+
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        border-top-color: #5cb85c;
+        border-bottom-color: #5cb85c;
+
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
     }
 
     100% {
-        transform: rotate(360deg);
-
+        opacity: 1;
     }
 }
